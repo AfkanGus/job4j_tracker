@@ -8,7 +8,6 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
-    //Добавление заявок
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
@@ -17,18 +16,9 @@ public class Tracker {
 
     //Получения списка всех заявок
     public Item[] findAll() {
-        Item[] items = new Item[size];
-        int index = 0;
-        for (int i = 0; i < size; i++) {
-            if (items[i] != null) {
-                items[index] = items[i];
-                index++;
-            }
-        }
-        return items;
+        return Arrays.copyOf(items, size);
     }
 
-    //Получение заявок по ID
     public Item findById(int id) {
         Item rsl = null;
         for (int index = 0; index < size; index++) {
@@ -43,14 +33,14 @@ public class Tracker {
 
     //Получение списка по имени
     public Item[] findByName(String key) {
-        Item[] items = new Item[size];
+        Item[] findItems = new Item[size];
         int digit = 0;
         for (int i = 0; i < size; i++) {
             if (items[i].getName().equals(key)) {
-                items[digit] = items[i];
+                findItems[digit] = items[i];
                 digit++;
             }
         }
-        return items;
+        return Arrays.copyOf(findItems, digit);
     }
 }
