@@ -57,7 +57,7 @@ public class Tracker {
         int index = indexOf(id);
         if (index == -1) {
             return false;
-        } else items[index] = item;
+        } items[index] = item;
         items[index].setId(id);
         return true;
     }
