@@ -55,25 +55,40 @@ public class Tracker {
     //Метод замены заявки,удаляя старую добавлять новую заявку
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        if (index == -1) {
+        //Запишем с валидацией
+        boolean rsl = index != -1;
+        if (rsl) {
+            items[index] = item;
+            items[index].setId(id);
+        }
+        return rsl;
+    }
+
+       /* if (index == -1) {
             return false;
         }
         items[index] = item;
         items[index].setId(id);
-        return true;
-    }
+        return true;*/
+
 
     //Метод удаления заявкки
     public boolean delete(int id) {
         int index = indexOf(id);
-        if (index == -1) {
+        //Запишем с валидацией
+        boolean rsl = index != -1;
+        if (rsl) {
+            System.arraycopy(items, index, items, index + 1, size - index);
+            items[size - 1] = null;
+            size--;
+        }
+        return rsl;
+    }
+       /* if (index == -1) {
             return false;
         }
         System.arraycopy(items, index, items, index + 1, size - index);
         items[size - 1] = null;
         size--;
-        return true;
-
-
-    }
+        return true;*/
 }
