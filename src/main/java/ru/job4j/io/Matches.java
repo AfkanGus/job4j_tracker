@@ -20,9 +20,7 @@ public class Matches {
                 System.out.println(" Не правильно, возьмите спички от 1 до 3");
             }
         }
-        if (matches == 0) {
-            System.out.println(" - победил!");
-        }
+        System.out.println(" - победил!");
     }
 }
 
