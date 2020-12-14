@@ -34,10 +34,10 @@ public final class StartUI {
                 Item item = new Item(id, name);
                 if (tracker.replace(id, item)) {
                     //вывод успешности операции
-                    System.out.println("item replaced/заменить item");                        // вывод об успешности операции
+                    System.out.println("item replaced/заменить item");// вывод об успешности операции
                 } else {
                     // вывод об ошибке
-                    System.out.println("Error, item not replaced/item не заменен");                        // вывод об ошибке
+                    System.out.println("Error, item not replaced/item не заменен");// вывод об ошибке
                 }
 
             } else if (select == 3) {
@@ -45,9 +45,9 @@ public final class StartUI {
                 System.out.print("Enter id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 if (tracker.delete(id)) {
-                    System.out.println("Item deleted");                        // вывод об успешности операции
+                    System.out.println("Item deleted");// вывод об успешности операции
                 } else {
-                    System.out.println("Error, item not deleted");                        // вывод об ошибке
+                    System.out.println("Error, item not deleted");// вывод об ошибк
                 }
 
             } else if (select == 4) {
@@ -72,20 +72,21 @@ public final class StartUI {
                 } else System.out.println("Error, item not find");
 
             } else if (select == 6) {
+                //Закрываем программу
                 run = false;
             }
         }
     }
 
     private void showMenu() {
-        System.out.printf("%n Menu. %n" +
-                "0. Add new Item %n" +
-                "1. Show all items %n" +
-                "2. Edit item %n" +
-                "3. Delete item %n" +
-                "4. Find item by Id %n" +
-                "5. Find items by name %n" +
-                "6. Exit Program %n");
+        System.out.printf(" %n Menu. %n"
+                + " 0. Add new Item %n"
+                + " 1. Show all items %n"
+                + " 2. Edit item %n"
+                + " 3. Delete item %n"
+                + " 4. Find item by Id %n"
+                + " 5. Find items by name %n"
+                + " 6. Exit Program %n");
     }
 
     public static void main(String[] args) {
