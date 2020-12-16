@@ -21,7 +21,10 @@ public final class StartUI {
 
             } else if (select == 1) {
                 System.out.println("Show all items:");
-                tracker.showAll();
+                Item[] items = tracker.findAll();
+                for (int i = 0; i < items.length; i++) {
+                    System.out.println("Name - " + items[i].getName() + ", Id - " + items[i].getId());
+                }
 
             } else if (select == 2) {
                 System.out.println("Edit item");
@@ -32,10 +35,10 @@ public final class StartUI {
                 Item item = new Item(id, name);
                 if (tracker.replace(id, item)) {
                     //вывод успешности операции
-                    System.out.println("item replaced/заменить item");// вывод об успешности операции
+                    System.out.println("item replaced/заменить item");
                 } else {
                     // вывод об ошибке
-                    System.out.println("Error, item not replaced/item не заменен");// вывод об ошибке
+                    System.out.println("Error, item not replaced/item не заменен");
                 }
 
             } else if (select == 3) {
@@ -65,9 +68,12 @@ public final class StartUI {
                 String name = scanner.nextLine();
                 Item[] items = tracker.findByName(name);
                 if (items.length > 0) {
-                    for (Item item : items)
+                    for (Item item : items) {
                         System.out.println(item);
-                } else System.out.println("Error, item not find");
+                    }
+                } else {
+                    System.out.println("Error, item not find");
+                }
 
             } else if (select == 6) {
                 //Закрываем программу
