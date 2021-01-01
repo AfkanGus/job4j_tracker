@@ -18,10 +18,10 @@ public class FindNameAction  implements UserAction{
         Item[] items = tracker.findByName(name);
         if (items.length > 0) {
             for (Item item : items) {
-                System.out.println(item);
+                out.println(item);
             }
         } else {
-            System.out.println("Error, item not find");
+            out.println("Error, item not find");
         }
         return true;
     }

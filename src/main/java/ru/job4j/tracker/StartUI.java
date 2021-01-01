@@ -12,7 +12,6 @@ public final class StartUI {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
-            //System.out.print("Select: ");
             int select = Integer.parseInt(input.askStr("Select: "));
             UserAction action = actions[select];
             run = action.execute(input, tracker);
@@ -20,9 +19,9 @@ public final class StartUI {
     }
 
     private void showMenu(UserAction[] actions) {
-        System.out.println("Menu.");
+        out.println("Menu.");
         for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + "." + actions[index].name());
+            out.println(index + "." + actions[index].name());
         }
     }
 
