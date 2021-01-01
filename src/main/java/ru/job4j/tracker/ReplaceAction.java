@@ -10,7 +10,7 @@ public class ReplaceAction  implements UserAction{
     @Override
     public boolean execute(Input input, Tracker tracker) {
         int id = Integer.parseInt(input.askStr("Enter id: "));
-        String name = input.askStr("Enter name: ");
+        String name = input.askStr("Enter name:");
         Item item = new Item(id, name);
         if (tracker.replace(id, item)) {
             //вывод успешности операции
@@ -19,7 +19,7 @@ public class ReplaceAction  implements UserAction{
             // вывод об ошибке
             System.out.println("Error, item not replaced/item не заменен");
         }
-        return false;
+        return true;
     }
 
 }
