@@ -1,3 +1,4 @@
+
 package ru.job4j.tracker;
 
 import org.junit.Test;
@@ -7,41 +8,54 @@ import static org.junit.Assert.*;
 
 public class StartUITest {
     @Test
-    public void createItem() {
-        String[] answers = {"Create a new Item"};
-        Input input = new StubInput(answers);
+    public void whenCreateItem() {
+        Input in = new StubInput(
+                new String[] {"0", "Item name", "1"}
+        );
         Tracker tracker = new Tracker();
-        StartUI.createItem(input, tracker);
-        Item created = tracker.findAll()[0];
-        Item expected = new Item(0, "Create a new Item");
-        assertThat(created.getName(), is(expected.getName()));
+        UserAction[] actions = {
+                new CreateAction(),
+                new ExitAction()
+        };
+        new StartUI().init(in, tracker, actions);
+        assertThat(tracker.findAll()[0].getName(), is("Item name"));
     }
 
     @Test
-    public void replaceItem() {
+    public void whenReplaceItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item(0, "new item");
-        tracker.add(item);
-        String[] answers = {
-                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
-                "replaced item"
+        /* Добавим в tracker новую заявку */
+        Item item = tracker.add(new Item(0,"Replaced item"));
+        /* Входные данные должны содержать ID добавленной заявки item.getId() */
+        String replacedName = "New item name";
+        Input in = new StubInput(
+                new String[] {"0","1",replacedName,"1"}
+        );
+        UserAction[] actions = {
+                new ReplaceAction(),
+                new ExitAction()
         };
-        StartUI.replaceItem(new StubInput(answers), tracker);
-        Item replaced = tracker.findById(item.getId());
-        assertThat(replaced.getName(), is("replaced item"));
+        new StartUI().init(in, tracker, actions);
+        assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
     }
 
-
     @Test
-    public void deleteItem() {
+    public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item(0, "Delet item");
-        tracker.add(item);
-        String[] answers = {
-                String.valueOf(item.getId()), "Item deleted"
+        /* Добавим в tracker новую заявку */
+        Item item = tracker.add(new Item(0,"Deleted item"));
+        /* Входные данные должны содержать ID добавленной заявки item.getId() */
+        Input in = new StubInput(
+                new String[] {"0", "1", "1"}
+        );
+        UserAction[] actions = {
+                new DeleteAction(),
+                new ExitAction()
         };
-        StartUI.deleteItem(new StubInput(answers), tracker);
-        Item deleted = tracker.findById(item.getId());
+        new StartUI().init(in, tracker, actions);
         assertNull(tracker.findById(item.getId()));
     }
 }
+
+
+
