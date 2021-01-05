@@ -7,13 +7,13 @@ public class Count {
         }
         int rsl = 0;
         for (int i = start; i != finish; i++) {
-            rsl = i;
+            rsl += i;
 
         }
         return rsl;
     }
 
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         System.out.println("Sum of 2 to 10 is : " + add(10, 2));
     }
 }
