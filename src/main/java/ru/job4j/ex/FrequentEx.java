@@ -1,7 +1,5 @@
 package ru.job4j.ex;
 
-import java.lang.module.FindException;
-
 public class FrequentEx {
     public static void main(String[] args) {
         String[] shops = {"Ebay", "Amazon", "Ozon"};
