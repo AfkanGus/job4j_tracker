@@ -9,7 +9,7 @@ public class FindEl {
                 return rsl;
             }
         }
-        if (key == null) {
+        if (rsl == -1) {
             throw new ElementNotFoundException("The element not found");
         }
         return rsl;
