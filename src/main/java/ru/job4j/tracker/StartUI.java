@@ -15,7 +15,7 @@ public final class StartUI {
             int select = input.askInt("Select: ");
             /*Проверка наличия выбранного пункта меню*/
             if (select < 0 || select >= actions.length) {
-                out.println("Wrong input, you can select: 0.. " + (actions.length - 1));
+                out.println("Wrong input, you can select: 0 .. " + (actions.length - 1));
                 continue;
             }
             UserAction action = actions[select];
@@ -32,7 +32,7 @@ public final class StartUI {
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
-        Input input = new ValidateInput();
+        Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output), new ShowAllAction(output),
