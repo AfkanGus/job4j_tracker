@@ -13,7 +13,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0"}
         );
-        Tracker tracker = new Tracker();
+        Tracker tracker = Tracker.getInstance();
         UserAction[] actions = {
                 new ExitAction(out)
         };
@@ -27,7 +27,7 @@ public class StartUITest {
     /*FindByNameAction*/
     @Test
     public void whenFindByName() {
-        Tracker tracker = new Tracker();
+        Tracker tracker =  Tracker.getInstance();
         Item item = tracker.add(new Item(0, "TestFirst"));
         Output out = new StubOutput();
         Input in = new StubInput(
@@ -51,7 +51,7 @@ public class StartUITest {
     /*ShowAllAction*/
     @Test
     public void whenFindAll() {
-        Tracker tracker = new Tracker();
+        Tracker tracker =  Tracker.getInstance();
         Item itemOne = tracker.add(new Item(0, "TestFindAll"));
         Item itemTwo = tracker.add(new Item(0, "Error of FindAll"));
         Output out = new StubOutput();
@@ -77,7 +77,7 @@ public class StartUITest {
     /*FindByIdAction*/
     @Test
     public void whenFindById() {
-        Tracker tracker = new Tracker();
+        Tracker tracker =  Tracker.getInstance();
         Item item = tracker.add(new Item(0, "TestFindById"));
         Output out = new StubOutput();
         Input in = new StubInput(
@@ -105,8 +105,8 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"1", "0"}
         );
-        Tracker tracker = new Tracker();
-        UserAction[] actions = {
+        Tracker tracker =  Tracker
+                .getInstance();        UserAction[] actions = {
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);

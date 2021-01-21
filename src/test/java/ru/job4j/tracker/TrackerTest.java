@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class TrackerTest {
     @Test
     public void whenReplace() {
-        Tracker tracker = new Tracker();
+        Tracker tracker = Tracker.getInstance();
         Item bug = new Item();
         bug.setName("Bug");
         tracker.add(bug);
@@ -21,14 +21,14 @@ public class TrackerTest {
     }
 
     @Test
-        public void whenDelete() {
-            Tracker tracker = new Tracker();
-            Item bug = new Item();
-            bug.setName("Bug");
-            tracker.add(bug);
-            int id = bug.getId();
-            tracker.delete(id);
-            assertThat(tracker.findById(id), is(nullValue()));
-        }
-
+    public void whenDelete() {
+        Tracker tracker = Tracker.getInstance();
+        Item bug = new Item();
+        bug.setName("Bug");
+        tracker.add(bug);
+        int id = bug.getId();
+        tracker.delete(id);
+        assertThat(tracker.findById(id), is(nullValue()));
     }
+
+}

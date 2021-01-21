@@ -3,10 +3,26 @@ package ru.job4j.tracker;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class Tracker {
+/*добавили final для запрета наследования*/
+public final class Tracker {
+    /*поле для ссылки на объект*/
+    private static Tracker instance = null;
     private final Item[] items = new Item[100];
     private int id = 1;
     private int size = 0;
+
+    /*создаем конструктор*/
+    private Tracker() {
+
+    }
+
+    /*стат. метод для получения ссылки на объект*/
+    public static Tracker getInstance() {
+        if (instance == null) {
+            instance = new Tracker();
+        }
+        return instance;
+    }
 
     public Item add(Item item) {
         item.setId(id++);
@@ -77,4 +93,4 @@ public class Tracker {
         size--;
         return true;
     }
-    }
+}
