@@ -15,10 +15,10 @@ public class PriorityQueue {
          * .*/
         for (Task element : tasks) {
             /*Сравниваем приаритеты важности*/
-            if (task.getPriority() > element.getPriority()) {
-                index++;
+            if (task.getPriority() < element.getPriority()) {
+                break;
             }
-            break;
+            index++;
         }
         this.tasks.add(index, task);
     }
