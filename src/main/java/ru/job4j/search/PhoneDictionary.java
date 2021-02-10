@@ -20,8 +20,8 @@ public class PhoneDictionary {
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
             /*проверка, что любое из полей объекта person содержит в себе передаваемый key*/
-            if (person.getPhone().equals(key) || person.getAddress().equals(key)
-                    || person.getName().equals(key) || person.getSurname().equals(key)
+            if (person.getPhone().contains(key) || person.getAddress().contains(key)
+                    || person.getName().contains(key) || person.getSurname().contains(key)
             ) {
                 result.add(person);
             }
