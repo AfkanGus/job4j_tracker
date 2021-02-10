@@ -12,13 +12,20 @@ public class PhoneDictionary {
 
     /**
      * Вернуть список всех пользователей, который содержат key в любых полях.
+     *
      * @param key Ключ поиска.
      * @return Список подощедщих пользователей.
      */
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
-        for(Person person : persons){
-            result.add(person);
+        for (Person person : persons) {
+            /*проверка, что любое из полей объекта person содержит в себе передаваемый key*/
+            if (person.getPhone().equals(key) || person.getAddress().equals(key)
+                    || person.getName().equals(key) || person.getSurname().equals(key)
+            ) {
+                result.add(person);
+            }
+
         }
         return result;
     }
