@@ -9,8 +9,9 @@ public class PassportOffice {
 
     public boolean add(Citizen citizen) {
         boolean rsl = false;
-        if (citizens.containsKey(citizen.getPassport()) == false) {
+        if (!citizens.containsKey(citizen.getPassport())) {
             citizens.put(citizen.getPassport(), citizen);
+            rsl = true;
         }
         return rsl;
     }
@@ -18,5 +19,4 @@ public class PassportOffice {
     public Citizen get(String passport) {
         return citizens.get(passport);
     }
-
 }
