@@ -9,15 +9,17 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        users.putIfAbsent(user, new ArrayList<>());
+        users.putIfAbsent(user, new ArrayList());
     }
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null) {
             List<Account> accounts = users.get(user);
-            if (!accounts.contains(account)) {
-                accounts.add(account);
+            if (accounts != null) {
+                if (!accounts.contains(account)) {
+                    accounts.add(account);
+                }
             }
         }
     }
@@ -36,7 +38,9 @@ public class BankService {
         if (user != null) {
             List<Account> accounts = users.get(user);
             for (Account account : accounts) {
-                return account;
+                if (account.getRequisite().contains(requisite)) {
+                    return account;
+                }
             }
         }
 
@@ -44,17 +48,17 @@ public class BankService {
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
-                                 String destPassport, String destRequisite,
-                                 double amount) {
+                                 String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         Account destAccount = findByRequisite(destPassport, destRequisite);
         if (srcAccount != null && destAccount != null) {
-            srcAccount.setBalance(srcAccount.getBalance());
-            srcAccount.setBalance(destAccount.getBalance());
-            return true;
+            if (srcAccount.getBalance() >= amount) {
+                srcAccount.setBalance(srcAccount.getBalance() - amount);
+                destAccount.setBalance(destAccount.getBalance() + amount);
+                return true;
+            }
         }
         return false;
-
     }
 }
