@@ -11,7 +11,7 @@ public class Tracker {
     /**
      * @noinspection checkstyle:EmptyLineSeparator
      */
-    private Tracker() {
+    Tracker() {
 
     }
 
