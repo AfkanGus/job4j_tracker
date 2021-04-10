@@ -1,4 +1,4 @@
-package ru.job4j.collection.Job;
+package ru.job4j.collection.job;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
@@ -13,10 +13,21 @@ public class JobTest {
     public void whenComparatorByNameAndPriority() {
         Comparator<Job> cmpNamePriority = new JobDescByName()
                 .thenComparing(new JobDescPriority());
-        int rsl = cmpNamePriority.compare(new Job("Impl task", 0),
-                new Job("Fix bug", 1)
+        int rsl = cmpNamePriority.compare(new Job("Fix bug", 0),
+                new Job("Fix bug", 0)
         );
+        assertThat(rsl, lessThan(1));
+    }
+
+    @Test
+    public void whenComparatorByPriorityAndName() {
+        Comparator cmpPriority = new JobAscendingByPriority().thenComparing(
+                new JobDescByName()
+        );
+        int rsl = cmpPriority.compare(new Job("Impl task", 0),
+                new Job("Fix bug", 0));
         assertThat(rsl, lessThan(0));
+
     }
 
     @Test
@@ -50,4 +61,5 @@ public class JobTest {
                 new Job("Fix bug", 0));
         assertThat(rsl, lessThan(0));
     }
+
 }
