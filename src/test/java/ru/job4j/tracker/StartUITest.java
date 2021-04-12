@@ -21,7 +21,8 @@ public class StartUITest {
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
+                "Menu." + System.lineSeparator()
+                        +
                         "0.Exit" + System.lineSeparator()
         ));
     }
@@ -29,7 +30,7 @@ public class StartUITest {
     /*FindByNameAction*/
     @Test
     public void whenFindByNameAction() {
-        Tracker tracker =  Tracker.getInstance();
+        Tracker tracker = Tracker.getInstance();
         Item item = tracker.add(new Item(0, "TestFirst"));
         Output out = new StubOutput();
         Input in = new StubInput(
@@ -40,19 +41,25 @@ public class StartUITest {
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0.Find item by name" + System.lineSeparator() +
-                        "1.Exit" + System.lineSeparator()
-                        + item + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        +
+                        "0.Find item by name" + System.lineSeparator()
+                        +
+                        "1.Exit"
+                        + System.lineSeparator()
+                        + item
+                        + System.lineSeparator()
                         + "Menu." + System.lineSeparator()
-                        + "0.Find item by name" + System.lineSeparator()
-                        + "1.Exit" + System.lineSeparator() + ""));
+                        + "0.Find item by name"
+                        + System.lineSeparator()
+                        + "1.Exit" + System.lineSeparator()
+                        + ""));
     }
 
     /*ShowAllAction*/
     @Test
     public void whenFindAll() {
-        Tracker tracker =  Tracker.getInstance();
+        Tracker tracker = Tracker.getInstance();
         Item itemOne = tracker.add(new Item(0, "TestFindAll"));
         Item itemTwo = tracker.add(new Item(0, "Error of FindAll"));
         Output out = new StubOutput();
@@ -77,7 +84,7 @@ public class StartUITest {
     /*FindByIdAction*/
     @Test
     public void whenFindById() {
-        Tracker tracker =  Tracker.getInstance();
+        Tracker tracker = Tracker.getInstance();
         Item item = tracker.add(new Item(0, "TestFindById"));
         Output out = new StubOutput();
         Input in = new StubInput(
@@ -90,12 +97,19 @@ public class StartUITest {
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu." + ln
-                        + "0.Find an item by id" + ln
-                        + "1.Exit" + ln
-                        + item + ln
-                        + "Menu." + ln
-                        + "0.Find an item by id" + ln
-                        + "1.Exit" + ln + ""));
+                        + "0.Find an item by id"
+                        + ln
+                        + "1.Exit"
+                        + ln
+                        + item
+                        + ln
+                        + "Menu."
+                        + ln
+                        + "0.Find an item by id"
+                        + ln
+                        + "1.Exit"
+                        + ln
+                        + ""));
     }
 
     @Test
@@ -104,7 +118,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"1", "0"}
         );
-        Tracker tracker =  Tracker
+        Tracker tracker = Tracker
                 .getInstance();
         List<UserAction> actions = new ArrayList<>();
         actions.add(new ExitAction(out));

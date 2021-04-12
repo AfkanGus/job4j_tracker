@@ -7,7 +7,6 @@ public class Student {
     private String gr;
     private String date;
 
-
     public String getFio() {
         return fio;
     }
@@ -24,7 +23,7 @@ public class Student {
         this.gr = gr;
     }
 
-    public String  getDate() {
+    public String getDate() {
         return date;
     }
 

@@ -7,10 +7,6 @@ public class Tracker {
     private final List<Item> items = new ArrayList<>();
     private int id = 1;
 
-
-    /**
-     * @noinspection checkstyle:EmptyLineSeparator
-     */
     Tracker() {
 
     }

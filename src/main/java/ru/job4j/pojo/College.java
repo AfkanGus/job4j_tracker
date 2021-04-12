@@ -8,8 +8,17 @@ public class College {
         student.setFio("Afkan Salman ");
         student.setGr("Java beginner");
         student.setDate("23.10.2020");
-        System.out.println("student" + "-" + student.getFio() + "," + " groupe " + student.getGr() + "," +
-                "  receipt date " + " - " + student.getDate());
+        System.out.println("student"
+                + "-"
+                + student.getFio()
+                + ","
+                + " groupe "
+                + student.getGr()
+                + ","
+                +
+                "  receipt date "
+                + " - "
+                + student.getDate());
 
     }
 }

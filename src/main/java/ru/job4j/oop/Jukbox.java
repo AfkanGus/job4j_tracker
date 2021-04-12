@@ -10,7 +10,6 @@ public class Jukbox {
         } else if (position > 2 || position < 1) {
             System.out.println("Песня не найдена");
         }
-
     }
 
     public static void main(String[] args) {

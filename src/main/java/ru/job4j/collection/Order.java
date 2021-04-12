@@ -17,9 +17,16 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "number='" + number + '\'' +
-                ", name='" + name + '\'' +
+        return "Order{"
+                +
+                "number='"
+                + number
+                + '\''
+                +
+                ", name='"
+                + name
+                + '\''
+                +
                 '}';
     }
 
@@ -33,7 +40,8 @@ public class Order {
             return false;
         }
         Order order = (Order) obj;
-        return Objects.equals(number, order.number) &&
+        return Objects.equals(number, order.number)
+                &&
                 Objects.equals(name, order.name);
     }
 

@@ -15,7 +15,9 @@ public class Mat {
                 matches -= select;
                 playerOne = !playerOne;
             } else {
-                System.out.println("неверно введено количество, введите от 1 до 3, но не больше чем осталось");
+                System.out.println("неверно введено количество, "
+                        +
+                        "введите от 1 до 3, но не больше чем осталось");
             }
         } while (matches > 0);
         System.out.println("Игрок номер " + (!playerOne ? "один" : "два") + " выиграл");

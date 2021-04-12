@@ -9,7 +9,6 @@ public class PhoneDictionary {
         this.persons.add(person);
     }
 
-
     /**
      * Вернуть список всех пользователей, который содержат key в любых полях.
      *

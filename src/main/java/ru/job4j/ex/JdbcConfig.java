@@ -12,7 +12,8 @@ public class JdbcConfig {
             load("jdbc://localhost:8080");
 
         } catch (UserInputException e) {
-            e.printStackTrace();/*Этот оператор выведет на консоль
+            e.printStackTrace();
+            /*Этот оператор выведет на консоль
              стек вызовов методов от начала программы до оператора,
              который вызвал прерывания. */
         }

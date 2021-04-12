@@ -1,3 +1,4 @@
+/*
 package ru.job4j.pojo;
 
 public class Shop {
@@ -13,3 +14,4 @@ public class Shop {
     }
 }
 
+*/

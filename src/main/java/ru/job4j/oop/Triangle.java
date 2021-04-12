@@ -1,3 +1,4 @@
+/*
 package ru.job4j.oop;
 
 public class Triangle {
@@ -28,10 +29,13 @@ public class Triangle {
         double p = period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
 
-            /* написать формулу для расчета площади треугольника, Формула Герона
-                 S = √p(p - a)(p - b)(p - c)*/
+            */
+/* написать формулу для расчета площади треугольника, Формула Герона
+                 S = √p(p - a)(p - b)(p - c)*//*
+
             rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
         }
         return rsl;
     }
 }
+*/

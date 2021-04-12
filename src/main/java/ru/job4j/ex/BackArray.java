@@ -9,7 +9,8 @@ public class BackArray {
         int middle = names.length / 2;
         for (int i = 0; i < middle; i++) {
             String temp = names[i];
-            names[i] = names[names.length - i - 1];//меняем элементы names местами
+            names[i] = names[names.length - i - 1];
+            //меняем элементы names местами
             names[names.length - i - 1] = temp;
 
         }

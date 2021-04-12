@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class DropArray {
     public static void main(String[] args) {
         //Создаем массив зполнений строками и нулями
-        String[] names = {"Petr", null,"Ivan", "Stepan", null};
+        String[] names = {"Petr", null, "Ivan", "Stepan", null};
         //Пустой массив по размеру первого,для копирования не нелувых элементов
         String[] namesWithoutNull = new String[names.length];
         int size = 0;
