@@ -59,4 +59,3 @@ public class StringCompareTest {
         assertThat(rsl, lessThan(0));
     }
 }
-/**/
