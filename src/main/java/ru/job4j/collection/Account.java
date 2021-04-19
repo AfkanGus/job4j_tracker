@@ -32,9 +32,6 @@ public class Account {
 
     }
 
-    /**
-     * @noinspection checkstyle:OperatorWrap
-     */
     @Override
     public String toString() {
         return "Account{"
