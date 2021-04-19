@@ -5,6 +5,12 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
+/**
+ * Тесты для класса BankService
+ *
+ * @author Afkan Guseynov
+ * @version 1.0
+ */
 public class BankServiceTest {
 
     @Test
