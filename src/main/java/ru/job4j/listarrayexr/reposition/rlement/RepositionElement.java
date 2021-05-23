@@ -3,7 +3,7 @@ package ru.job4j.listarrayexr.reposition.rlement;
 import java.util.List;
 
 /**
- * Удаление и замена элементов в списке
+ * 6. Удаление и замена элементов в списке
  * Продолжим модифицировать список, познакомимся с методами для удаления
  * элементов в списке и замены элемента по индексу.
  * Для этого предназначены методы set() и remove():
@@ -25,9 +25,8 @@ import java.util.List;
  */
 public class RepositionElement {
     public static List<String> changePosition(List<String> list, int index) {
-
         String last = list.remove(list.size() - 1);
-        if (list.size() - 1 < index) {
+        if (list.size() - 1 >= index) {
             list.set(index, last);
         }
         return list;

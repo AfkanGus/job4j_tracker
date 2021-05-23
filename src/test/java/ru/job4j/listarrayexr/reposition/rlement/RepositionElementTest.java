@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class RepositionElementTest {
     private List<String> list = new ArrayList<>();
 
-    @Test
+    @Before
     public void setUp() {
         list.add("one");
         list.add("two");
