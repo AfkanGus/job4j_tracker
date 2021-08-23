@@ -63,21 +63,15 @@ public class ThenComparingMethod {
     }
 
     public static Comparator<User> thenComparing() {
-        return ThenComparingMethod.ascByName().thenComparing(ThenComparingMethod.descByAge());
-
+        return ThenComparingMethod.ascByName().thenComparing(descByAge());
     }
 
     public static Comparator<User> ascByName() {
         return Comparator.naturalOrder();
-
     }
 
     public static Comparator<User> descByAge() {
-        return new Comparator<User>() {
-            @Override
-            public int compare(User o1, User o2) {
-                return Integer.compare(o2.getAge(), o1.getAge());
-            }
-        };
+        return Comparator.reverseOrder();
     }
 }
+
