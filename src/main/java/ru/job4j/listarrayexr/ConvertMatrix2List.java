@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConvertMatrix2List {
-    // Метод принимает список с массивом чисел
     public static List<Integer> convert(List<int[]> list) {
         List<Integer> rsl = new ArrayList<>();
         for (int[] row : list) {

@@ -16,15 +16,12 @@ public class PhoneDictionary {
      * @return Список подощедщих пользователей.
      */
     public ArrayList<Person> find(String key) {
-        ArrayList<Person> result = new ArrayList<>();
+        ArrayList<Person> result = new ArrayList<Person>();
         for (Person person : persons) {
-            /*проверка, что любое из полей объекта person содержит в себе передаваемый key*/
-            if (person.getPhone().contains(key) || person.getAddress().contains(key)
-                    || person.getName().contains(key) || person.getSurname().contains(key)
-            ) {
+            if (person.getAddress().contains(key) || person.getPhone().contains(key)
+                    || person.getSurname().contains(key) || person.getName().contains(key)) {
                 result.add(person);
             }
-
         }
         return result;
     }

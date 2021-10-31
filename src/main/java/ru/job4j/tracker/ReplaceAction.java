@@ -20,13 +20,10 @@ public class ReplaceAction implements UserAction {
         String name = input.askStr("Enter name:");
         Item item = new Item(id, name);
         if (tracker.replace(id, item)) {
-            //вывод успешности операции
             out.println("item replaced/заменить item");
         } else {
-            // вывод об ошибке
             out.println("Error, item not replaced/item не заменен");
         }
         return true;
     }
-
 }

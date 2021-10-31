@@ -15,4 +15,10 @@ public class GeomProgression {
         }
         return sum;
     }
+
+    public static void main(String[] args) {
+        int rsl = GeomProgression.generateAndSum(1, 3, 10);
+        System.out.println(rsl);
+    }
 }
+

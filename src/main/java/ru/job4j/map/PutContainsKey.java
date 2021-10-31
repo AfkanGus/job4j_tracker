@@ -7,6 +7,7 @@ import java.util.Objects;
 
 /**
  * 1.1. Вставка новых элементов.
+ *
  */
 public class PutContainsKey {
     public static Map<Integer, User> addNewElementWithoutCheck(List<User> list) {
@@ -22,6 +23,7 @@ public class PutContainsKey {
         for (User user : list) {
             if (!rsl.containsKey(user.getId())) {
                 rsl.put(user.getId(), user);
+
             }
         }
         return rsl;
