@@ -61,5 +61,4 @@ public class JobTest {
                 new Job("Fix bug", 0));
         assertThat(rsl, lessThan(0));
     }
-
 }

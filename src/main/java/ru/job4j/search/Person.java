@@ -8,9 +8,9 @@ public class Person {
 
     public Person(String name, String surname, String phone, String address) {
         this.name = name;
-        this.name = surname;
-        this.name = phone;
-        this.name = address;
+        this.surname = surname;
+        this.phone = phone;
+        this.address = address;
     }
 
     public String getName() {

@@ -12,7 +12,6 @@ public class UniqueName {
             uniqueName.add(user);
         }
         return uniqueName.size();
-        //метод size() возвращает количество элементов в коллекции
     }
 
     public static class User {
