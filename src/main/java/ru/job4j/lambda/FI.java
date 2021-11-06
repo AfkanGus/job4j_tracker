@@ -29,7 +29,8 @@ public class FI {
             return Integer.compare(right.length(), left.length());
         };
         Arrays.sort(str, cmpDescSize);
-        for (String string : str) {
+        for (
+                String string : str) {
             System.out.println(string);
         }
     }
