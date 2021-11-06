@@ -17,5 +17,24 @@ public class LambdaUsage {
             System.out.println(string);
         }
 
+        String[] names = {
+                "Ivan"
+        };
+        Comparator<String> lengthCmp = (left, right) -> {
+            System.out.println("execute comparator");
+            return left.length() - right.length();
+        };
+        Arrays.sort(names, lengthCmp);
+        for (String string : names) {
+            System.out.println(string);
+        }
+        String[] namesExecute = {
+                "Ivan",
+                "Petr"
+        };
+        Arrays.sort(namesExecute, lengthCmp);
+        for (String string : namesExecute) {
+            System.out.println(string);
+        }
     }
 }
