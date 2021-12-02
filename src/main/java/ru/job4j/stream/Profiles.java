@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * @param - profiles.stream() - получен потом данных в виде адресов клиентов
  * @param - map(Profile::getAddress) - получаем с анкеты клинтов их адреса
  * @param - sorted(Comparator.comparing(Address::getCity) - метод принимает лямбда
- * вырожение, где сравниваются адреса городов
+ *          вырожение, где сравниваются адреса городов
  * @param - distinct() -метод сравнивает элементы стрима и исключает дубликаты
  * @param - collect(Collectors.toList() - и собираем полученные адреса в список
  */

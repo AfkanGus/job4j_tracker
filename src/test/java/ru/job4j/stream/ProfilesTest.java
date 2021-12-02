@@ -1,6 +1,5 @@
 package ru.job4j.stream;
 
-
 import org.junit.Test;
 
 import java.util.ArrayList;
