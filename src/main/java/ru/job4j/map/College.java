@@ -1,8 +1,5 @@
 package ru.job4j.map;
 
-import ru.job4j.map.Student;
-import ru.job4j.map.Subject;
-
 import java.util.Map;
 import java.util.Set;
 
@@ -18,27 +15,23 @@ public class College {
 
     /**
      * Метод -findByAccount - поиска студента - Student,по аккаунту(String account),
-     * @param - students.keySet() - метов вернет значения у students в виде Set.
-     * @param -student.getAccount().equals(account) - получаем у student account и equals сравнивает
-     * ссыллки на account если true то метод вернет student
+     *
+     * @param - students.keySet() - метод вернет значения в виде коллекции Set и предает в stream()
+     * @param - .filter(s -> s.getAccount().equals(account)) - фильтрует stream,if return true
+     * @param - .findFirst() - метод возвращает результат в виде объекта типа Optional
+     * @param - .orElse() -возвращает значение если в объекте Optional есть значение,
      * @return - null - вернет пустую ссылку.
      */
     public Student findByAccount(String account) {
-        for (Student student : students.keySet()) {
-            if (student.getAccount().equals(account)) {
-                return student;
-            }
-        }
-        return null;
+        return students.keySet()
+                .stream()
+                .filter(s -> s.getAccount().equals(account))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
      * Метод - findBySubjectName - поиск предмета -Subject, по аккаунту и названию
-     * @param account - аккаунт студента
-     * @param name - название прдемета.
-     * @param - s.getName().equals(name) - получим название прдмета и сравним его ссылки
-     * @return - s - вернем название предмета если true
-     * @return - null - ссылка на предмет отсутствует
      */
     public Subject findBySubjectName(String account, String name) {
         Student a = findByAccount(account);
