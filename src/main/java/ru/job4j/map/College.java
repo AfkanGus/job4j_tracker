@@ -36,12 +36,11 @@ public class College {
     public Subject findBySubjectName(String account, String name) {
         Student a = findByAccount(account);
         if (a != null) {
-            Set<Subject> subjects = students.get(a);
-            for (Subject s : subjects) {
-                if (s.getName().equals(name)) {
-                    return s;
-                }
-            }
+            return students.get(a)
+                    .stream()
+                    .filter(s -> s.getName().equals(name))
+                    .findFirst()
+                    .orElse(null);
         }
         return null;
     }
