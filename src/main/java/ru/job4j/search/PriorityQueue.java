@@ -9,7 +9,7 @@ public class PriorityQueue {
      * найти index нужного элемента.
      * */
     public void put(Task task) {
-        int index = 0;
+        var index = 0;
         /*
          * пройдемся по всем элементам, а индекс будет равен размеру всей коллекции
          * .*/
