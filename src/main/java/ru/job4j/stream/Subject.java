@@ -1,5 +1,8 @@
 package ru.job4j.stream;
 
+/**
+ * Subject - класс с описанием предмета и оценки по предмету
+ */
 public class Subject {
     private String name;
     private int score;

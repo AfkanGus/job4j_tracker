@@ -7,6 +7,9 @@ import org.junit.Test;
 
 import java.util.List;
 
+/**
+ * Класс Test для class Analyze
+ */
 public class AnalyzeTest {
     @Test
     public void whenSinglePupil() {

@@ -2,6 +2,9 @@ package ru.job4j.stream;
 
 import java.util.Objects;
 
+/**
+ * Класс описание ученика и его  оценок
+ */
 public class Tuple {
     private String name;
     private double score;
