@@ -29,11 +29,25 @@ public class Student {
         }
         Student student = (Student) o;
         return score == student.score
-                && Objects.equals(surname, student.surname);
+                && surname.equals(student.surname);
+
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(score, surname);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{"
+                + "score=" + score
+                + ", surname='" + surname
+                + '\''
+                + '}';
     }
 }

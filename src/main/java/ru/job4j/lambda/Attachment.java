@@ -21,7 +21,8 @@ public class Attachment {
     public String toString() {
         return "Attachment{"
                 + "name='"
-                + name + '\''
+                + name
+                + '\''
                 + ", size="
                 + size
                 + '}';
