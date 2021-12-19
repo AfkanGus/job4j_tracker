@@ -3,6 +3,11 @@ package ru.job4j.stream;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+/**
+ * findFirst() - вернет первый элемент отфильтрованного патока.
+ * Если отфилтрПоток пустой, то нужно вернуть null - поэтому испльзуем
+ * Optional
+ */
 public class OptStream {
     public static void main(String[] args) {
         Stream<Integer> stream = Stream.of(1, 2, 3);

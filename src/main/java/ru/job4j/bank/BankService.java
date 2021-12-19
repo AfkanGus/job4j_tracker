@@ -18,7 +18,7 @@ public class BankService {
      * и их счетов.
      */
 
-    private final Map<User, List<Account>> us = new HashMap<>();
+    private Map<User, List<Account>> users = new HashMap<>();
 
     /**
      * Метод принмает пользователя и список счетов
@@ -29,7 +29,7 @@ public class BankService {
      */
 
     public void addUser(User user) {
-        us.putIfAbsent(user, new ArrayList<>());
+        users.putIfAbsent(user, new ArrayList());
     }
 
     /**
@@ -43,7 +43,7 @@ public class BankService {
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null) {
-            List<Account> accounts = us.get(user);
+            List<Account> accounts = users.get(user);
             if (!accounts.contains(account)) {
                 accounts.add(account);
             }
@@ -57,7 +57,7 @@ public class BankService {
      * @return -  найденного пользователя
      */
     public User findByPassport(String passport) {
-        return us.keySet()
+        return users.keySet()
                 .stream()
                 .filter(s -> s.getPassport().equals(passport))
                 .findFirst()
@@ -74,13 +74,13 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
-            return us.get(user)
+            return users.get(user)
                     .stream()
                     .filter(s -> s.getRequisite().equals(requisite))
                     .findFirst()
                     .orElse(null);
         }
-        return null;
+       return null;
     }
 
     /**
@@ -91,16 +91,20 @@ public class BankService {
      * @param destPassport  - паспорт получателя
      * @param destRequisite - реквизиты счеьа получателя
      * @param amount        - сумма перевода
+     * @return - перевод выполнен удачно - true, false - перевод невозможен
      */
-    public void tMoney(String srcPassport, String srcRequisite,
-                       String destPassport, String destRequisite, double amount) {
+    public boolean transferMoney(String srcPassport, String srcRequisite,
+                                 String destPassport, String destRequisite, double amount) {
+        boolean rsl = false;
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         Account destAccount = findByRequisite(destPassport, destRequisite);
         if (srcAccount != null && destAccount != null) {
             if (srcAccount.getBalance() >= amount) {
                 srcAccount.setBalance(srcAccount.getBalance() - amount);
                 destAccount.setBalance(destAccount.getBalance() + amount);
+                return true;
             }
         }
+        return false;
     }
 }
