@@ -28,7 +28,8 @@ public class Format {
 
     public static void getGreetingAndTime(String name) {
         Calendar instance = Calendar.getInstance();
-        System.out.println(String.format("Привет, %s! Текущая дата: %tF, Текущее время: %tT", name, instance, instance));
+        System.out.println(String.format("Привет, %s! Текущая дата: %tF,"
+                + "Текущее время: %tT", name, instance, instance));
     }
 
     public static void main(String[] args) {
