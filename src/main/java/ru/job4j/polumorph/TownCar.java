@@ -24,4 +24,15 @@ public class TownCar implements Vehicle {
     public void changeGear() {
         System.out.println("Стандартное рулевое управление");
     }
+
+    /*
+    chargeBattery() можно явно не переопределять, так как он уже унаследован
+     от интерфейса Vehicle. В данном примере мы его переопределили для наглядности.
+     Дефолтные методы удобно использовать, если в классах, имплементирующих один и
+      тот же интерфейс, должен быть объявлен метод с одинаковой реализацией.
+     */
+    @Override
+    public void chargeBattery() {
+        Vehicle.super.chargeBattery();
+    }
 }

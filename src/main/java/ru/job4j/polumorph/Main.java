@@ -36,5 +36,11 @@ public class Main {
         vehicle.steer();
         vehicle.brake();
         fuel.refill();
+        /*
+        Для вызова метода, определенного как static,
+         нужно указать имя интерфейса и через точку название метода.
+         */
+        Vehicle.getDragCoefficient();
+
     }
 }

@@ -8,7 +8,9 @@ package ru.job4j.polumorph;
 public class SportCar implements Vehicle, Fuel {
     @Override
     public void changeGear() {
-        System.out.println("Механическая коробка передач. Включить первую, дальше переключать до шестой");
+        System.out.println("Механическая коробка передач."
+                +
+                " Включить первую, дальше переключать до шестой");
     }
 
     @Override
@@ -18,7 +20,9 @@ public class SportCar implements Vehicle, Fuel {
 
     @Override
     public void steer() {
-        System.out.println("Укороченная рулевая рейка для ускоренного поворота руля");
+        System.out.println("Укороченная рулевая"
+                +
+                " рейка для ускоренного поворота руля");
     }
 
     @Override
@@ -32,5 +36,13 @@ public class SportCar implements Vehicle, Fuel {
     @Override
     public void refill() {
         System.out.println("Заправить 100л бензина");
+    }
+
+    /*
+    мы переопределяем метод chargeBattery() своей реализацией:
+     */
+    @Override
+    public void chargeBattery() {
+        System.out.println("Аккумулятор в багажнике. Зарядить.");
     }
 }
