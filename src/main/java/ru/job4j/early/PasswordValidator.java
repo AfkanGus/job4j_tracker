@@ -83,8 +83,7 @@ public class PasswordValidator {
             if (password.toLowerCase().contains(string)) {
                 throw new IllegalArgumentException(
                         "Password shouldn't contain substrings: qwerty,"
-                                +
-                                " 12345, password, admin, user"
+                                + " 12345, password, admin, user"
                 );
             }
         }
