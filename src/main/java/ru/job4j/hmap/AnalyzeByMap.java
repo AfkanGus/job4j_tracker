@@ -1,9 +1,6 @@
 package ru.job4j.hmap;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AnalyzeByMap {
     public static double averageScore(List<Pupil> pupils) {
@@ -34,40 +31,33 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
-        Map<String, Integer> scoresBySubject = new HashMap<>();
+        Map<String, Integer> subjectScoreMap = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                scoresBySubject.merge(subject.name(), subject.score(), Integer::sum);
+                subjectScoreMap.merge(subject.name(), subject.score(), Integer::sum);
             }
         }
+
         List<Label> result = new ArrayList<>();
-        for (Map.Entry<String, Integer> entry : scoresBySubject.entrySet()) {
-            String subjectName = entry.getKey();
-            Integer totalScore = entry.getValue();
-            double averageScore = (double) totalScore / pupils.size();
-            result.add(new Label(subjectName, averageScore));
+        for (Map.Entry<String, Integer> entry : subjectScoreMap.entrySet()) {
+            double avgScore = (double) entry.getValue() / pupils.size();
+            result.add(new Label(entry.getKey(), avgScore));
         }
+
         return result;
     }
 
     public static Label bestStudent(List<Pupil> pupils) {
-        Pupil bestPupil = null;
-        double bestSum = 0.0;
+        List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
             double sum = 0.0;
             for (Subject subject : pupil.subjects()) {
                 sum += subject.score();
             }
-            if (sum > bestSum) {
-                bestPupil = pupil;
-                bestSum = sum;
-            }
+            labels.add(new Label(pupil.name(), sum));
         }
-        if (bestPupil == null) {
-            return null;
-        } else {
-            return new Label(bestPupil.name(), bestSum);
-        }
+        labels.sort(Comparator.naturalOrder());
+        return labels.get(labels.size() - 1);
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
@@ -78,15 +68,15 @@ public class AnalyzeByMap {
                         subject.score(), Integer::sum);
             }
         }
-        int bestScore = 0;
-        String bestSubject = "";
+        List<Label> labels = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : scoresBySubject.entrySet()) {
-            if (entry.getValue() > bestScore) {
-                bestScore = entry.getValue();
-                bestSubject = entry.getKey();
-            }
+            String subject = entry.getKey();
+            int score = entry.getValue();
+            labels.add(new Label(subject, score));
         }
-        return new Label(bestSubject, (double) bestScore);
+
+        labels.sort(Collections.reverseOrder());
+        return labels.get(0);
     }
 }
 
