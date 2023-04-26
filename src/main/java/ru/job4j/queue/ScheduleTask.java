@@ -1,8 +1,6 @@
 package ru.job4j.queue;
-
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
 /**
  * Сортировки задач в очереди.
  */

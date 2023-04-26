@@ -1,7 +1,5 @@
 package ru.job4j.queue;
-
 import java.util.Comparator;
-
 /**
  * Сравнивать задачи по убыванию срочности.
  */
