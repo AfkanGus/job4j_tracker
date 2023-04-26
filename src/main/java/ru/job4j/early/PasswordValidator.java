@@ -1,7 +1,7 @@
 package ru.job4j.early;
 
 /**
- * 4. Принципы раннего возврата и охранных выражений [#504875].
+ * [#504875].
  */
 public class PasswordValidator {
     private static final String[] FORBIDDEN = {"qwerty", "12345", "password", "admin", "user"};
