@@ -1,4 +1,7 @@
 package ru.job4j.stream;
+/**
+ * 9. Генерирование колоды карт. FlatMap [#504873 #476695].
+ */
 
 import java.util.stream.Stream;
 
