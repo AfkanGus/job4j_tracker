@@ -18,10 +18,13 @@ public class Example {
         pop()позволяет удалить головной элемент из очереди и вернуть его.
          */
         System.out.println(deque);
-        //- pop() – позволяет удалить головной элемент из очереди и вернуть его.
+        /* pop() – позволяет удалить головной элемент из очереди и вернуть его.
+         */
         System.out.println(deque.pop() + " Удалил первый");
         System.out.println(deque);
-        // poll() – методы позволяют удалить верхний (первый) элемент из очереди.
+        /*
+        poll() –методы позволяют удалить верхний (первый) элемент из очереди.
+        */
         System.out.println(deque.poll() + " удалил верxний");
         System.out.println(deque);
         System.out.println(deque.pollFirst() + " remove first");
