@@ -20,16 +20,17 @@ public class WordFrequencyCounter {
         /* Разделяем текст на отдельные слова*/
         String[] words = text.split("\\s+");
 
-        // Подсчитываем частоту встречаемости слов
+        /* Подсчитываем частоту встречаемости слов
+         */
         for (String word : words) {
 
             /*Удаляем все символы, кроме букв, из слова*/
 
             String cleanedWord = word.replaceAll("[^a-zA-Zа-яА-Я]", "");
-                    cleanedWord.toLowerCase();
+            cleanedWord.toLowerCase();
 
             if (!cleanedWord.isEmpty()) {
-                 /*Обновляем частоту встречаемости слова в карте*/
+                /*Обновляем частоту встречаемости слова в карте*/
                 wordFrequencyMap.put(cleanedWord,
                         wordFrequencyMap.getOrDefault(cleanedWord, 0) + 1);
             }
