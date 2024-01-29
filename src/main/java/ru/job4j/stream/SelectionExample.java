@@ -16,12 +16,11 @@ import java.util.List;
 public class SelectionExample {
     public static void main(String[] args) {
         List<String> strings = Arrays.asList("odin", "dva", "Tri", "Cetire", "Pyat");
-        List<String> result = strings
+        String result = strings
                 .stream()
-                .skip(2)
-                .limit(3)
-                .toList();
+                .skip(strings.size() - 1)
+                .findFirst()
+                .orElse("Defolt");
         System.out.println(result);
     }
-
 }
