@@ -2,6 +2,9 @@ package ru.job4j.search;
 
 import java.util.LinkedList;
 
+/**
+ * 5. Очередь с приоритетом на LinkedList [#41670 #58972].
+ */
 public class PriorityQueue {
     private LinkedList<Task> tasks = new LinkedList<>();
 
@@ -11,7 +14,8 @@ public class PriorityQueue {
     public void put(Task task) {
         var index = 0;
         /*
-         * пройдемся по всем элементам, а индекс будет равен размеру всей коллекции
+         * пройдемся по всем элементам, а индекс будет равен размеру
+         * всей коллекции
          * .*/
         for (Task element : tasks) {
             /*Сравниваем приаритеты важности*/

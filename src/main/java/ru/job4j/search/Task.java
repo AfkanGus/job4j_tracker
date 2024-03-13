@@ -1,5 +1,7 @@
 package ru.job4j.search;
-
+/**
+ * 5. Очередь с приоритетом на LinkedList [#41670 #58972].
+ */
 public class Task {
     private String desc;
     private int priority;

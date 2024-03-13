@@ -8,7 +8,9 @@ import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-
+/**
+ * 5. Очередь с приоритетом на LinkedList [#41670 #58972].
+ */
 public class PriorityQueueTest {
 
     @Test
