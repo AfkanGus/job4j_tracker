@@ -1,7 +1,9 @@
 package ru.job4j.tracker;
 
 import java.util.List;
-
+/**
+ * Техническое задание - проект Tracker.
+ */
 public class FindNameAction implements UserAction {
 
     private final Output out;

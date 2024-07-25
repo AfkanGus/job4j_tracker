@@ -2,7 +2,9 @@ package ru.job4j.tracker;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
-
+/**
+ * Техническое задание - проект Tracker.
+ */
 public class Item implements Comparable<Item> {
     private int id;
     private String name;

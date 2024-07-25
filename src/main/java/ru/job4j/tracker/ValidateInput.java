@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
-
+/**
+ * Техническое задание - проект Tracker.
+ */
 public class ValidateInput implements Input {
     private final Output out;
     private final Input in;
