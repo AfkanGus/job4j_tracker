@@ -2,9 +2,12 @@ package ru.job4j.listarrayexr;
 
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
+/**
+ * 15. Геометрическая прогрессия.
+ */
 public class GeomProgressionTest {
     @Test
     public void generateAndSum() {
