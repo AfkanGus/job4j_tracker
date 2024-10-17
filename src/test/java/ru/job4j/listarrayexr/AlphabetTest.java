@@ -1,9 +1,11 @@
 package ru.job4j.listarrayexr;
 
 import org.junit.Test;
-
+/**
+ * 16. Буквы в алфавитном порядке.
+ */
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 public class AlphabetTest {
     @Test
