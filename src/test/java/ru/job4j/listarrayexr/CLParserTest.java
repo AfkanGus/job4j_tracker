@@ -17,6 +17,7 @@ class CLParserTest {
         assertThat(parser.hasOutputPath(), is(true));
         assertThat(parser.outputPath(), equalTo("/some/path"));
     }
+
     @Test
     public void whenFlagP() {
         String[] args = new String[]{"-p", "log_"};

@@ -8,7 +8,7 @@ import java.util.List;
  * Задача:
  * Реализуйте утилиту на Java для разбора входных параметров
  * командной строки. Утилита должна поддерживать следующие ключи:
- *
+ * <p>
  * -s — короткая статистика.
  * -f — полная статистика.
  * -o — путь для выходных файлов.
@@ -16,10 +16,10 @@ import java.util.List;
  * -a — добавление данных в файл (может отсутствовать).
  * Утилита должна корректно обрабатывать все параметры и сообщать
  * о том, какие из них были переданы.
- *
+ * <p>
  * Реализуйте класс для обработки этих параметров и напишите юнит-тесты
  * для проверки корректности работы каждого ключа.
- *
+ * <p>
  * Пример запуска утилиты:
  * java -jar util.jar -s -a -p sample- in1.txt in2.txt
  */
@@ -116,5 +116,20 @@ public class CLParser {
 
     public boolean isFullStatistic() {
         return fullStat;
+    }
+
+    public static void main(String[] args) {
+        CLParser parser = new CLParser(args);
+
+        if (parser.parse()) {
+            System.out.println("Short stat: " + parser.isShortStatistic());
+            System.out.println("Full stat: " + parser.isFullStatistic());
+            System.out.println("Add mode: " + parser.isAddMode());
+            System.out.println("Output path: " + parser.outputPath());
+            System.out.println("Prefix: " + parser.prefix());
+            System.out.println("Input files: " + parser.inputs());
+        } else {
+            System.out.println("Errors: " + parser.description());
+        }
     }
 }
