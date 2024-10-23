@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 /**
- * 6. Анализ лога HTTP сервера.git
+ * 6.РђРЅР°Р»РёР· Р»РѕРіР° HTTP  СЃРµСЂРІРµСЂР°
  */
  public class AnalyzeHttpLogTest {
     @Test
@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.is;
                 new AnalyzeHttpLog.Line("DEBUG", "[threads [zqfz [wbye [zfq]]] - 1]", "[cz] bxa")
         );
         assertThat(AnalyzeHttpLog.groupByLevel(logs),
-                is(Map.of("ERROR", 3, "DEBUG", 1))
+                is(Map.of("ERROR", 3L, "DEBUG", 1L))
         );
     }
 
@@ -46,8 +46,8 @@ import static org.hamcrest.Matchers.is;
                 new AnalyzeHttpLog.Line("ERROR", "[threads [qbxb]]", "eaba yzd"),
                 new AnalyzeHttpLog.Line("DEBUG", "[threads [qbxb]]", "[cz] bxa")
         );
-        assertThat(AnalyzeHttpLog.detailByThread(logs, "[threads [qbxb]]", List.of("ERROR", "WARNING")),
-                is(Map.of("ERROR", 3, "DEBUG", 1))
+        assertThat(AnalyzeHttpLog.detailByThread(logs, "[threads [qbxb]]", List.of("ERROR", "DEBUG")),
+                is(Map.of("ERROR", 3L, "DEBUG", 1L))
         );
     }
 }

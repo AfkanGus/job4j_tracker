@@ -1,12 +1,13 @@
 package ru.job4j.map;
 
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * 6.Анализ лога HTTP сервера
+ * 6.Анализ лога HTTP  сервера
  * В этом задании нужно реализовать методы для анализа лога от HTTP сервера.
  * <p>
  * Входные данные является список из объектов Line.
@@ -30,10 +31,12 @@ public class AnalyzeHttpLog {
     public record Line(String level, String thread, String text) {
     }
 
-
     public static Map<String, Long> groupByLevel(List<Line> logs) {
         return logs.stream()
-                .collect(Collectors.groupingBy(Line::level, Collectors.toMap(logs)));
+                .collect(Collectors.groupingBy(
+                        Line::level,
+                        LinkedHashMap::new,
+                        Collectors.counting()));
     }
 
     public static String maxByThread(List<Line> logs) {
@@ -50,7 +53,7 @@ public class AnalyzeHttpLog {
         Map<String, Long> result = orders.stream()
                 .collect(Collectors.toMap(level -> level, level -> 0L));
 
-        // Фильтруем логи и добавляем реальные данные
+        /*Фильтруем логи и добавляем реальные данные*/
         logs.stream()
                 .filter(log -> log.thread().equals(thread) && orders.contains(log.level()))
                 .collect(Collectors.groupingBy(Line::level, Collectors.counting()))
