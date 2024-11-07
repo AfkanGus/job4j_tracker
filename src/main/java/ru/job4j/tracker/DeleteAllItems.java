@@ -1,9 +1,11 @@
 package ru.job4j.tracker;
 
 import java.util.List;
+
 /**
  * 1. Профилирование. [#1591].
  */
+
 public class DeleteAllItems implements UserAction {
     private final Output out;
 
