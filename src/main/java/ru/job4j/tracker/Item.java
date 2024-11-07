@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+
 /**
  * Техническое задание - проект Tracker.
  */
@@ -11,7 +12,6 @@ public class Item implements Comparable<Item> {
     private LocalDateTime created = LocalDateTime.now();
 
     public Item() {
-
     }
 
     public Item(int id) {
@@ -20,6 +20,10 @@ public class Item implements Comparable<Item> {
 
     public Item(int id, String name) {
         this.id = id;
+        this.name = name;
+    }
+/*1. Профилирование. [#1591]*/
+    public Item(String name) {
         this.name = name;
     }
 
