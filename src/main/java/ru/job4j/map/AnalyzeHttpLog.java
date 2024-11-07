@@ -57,7 +57,7 @@ public class AnalyzeHttpLog {
         logs.stream()
                 .filter(log -> log.thread().equals(thread) && orders.contains(log.level()))
                 .collect(Collectors.groupingBy(Line::level, Collectors.counting()))
-                .forEach(result::put); // Обновляем результат
+                .forEach(result::put); /*Обновляем результат*/
 
         return result;
     }
