@@ -3,7 +3,6 @@ package ru.job4j.tracker;
 /**
  * 1. Профилирование. [#1591].
  */
-
 public class CreateManyItems implements UserAction {
     private final Output out;
 
