@@ -22,7 +22,8 @@ public class Item implements Comparable<Item> {
         this.id = id;
         this.name = name;
     }
-/*1. Профилирование. [#1591]*/
+
+    /*1. Профилирование. [#1591]*/
     public Item(String name) {
         this.name = name;
     }
